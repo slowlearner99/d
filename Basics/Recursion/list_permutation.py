@@ -20,5 +20,6 @@ def permutation(listt):
 
 	return l
 
+
 strr = list('abc')
 print permutation(strr)

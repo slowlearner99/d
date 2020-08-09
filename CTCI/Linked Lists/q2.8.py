@@ -6,17 +6,25 @@ class Node(object):
 
 def cycle_check(node):
 
-	marker1 = node
-	marker2 = node
+	marker1 = node #slow node
+	marker2 = node #fast node
 
 	while marker2 != None and marker2.next != None:
 		marker1 = marker1.next
 		marker2 = marker2.next.next
 
 		if marker2 == marker1:
-			return marker2.item
+			break
 
-	return False
+	if(marker2 == None or marker2.next == None):
+		return	False
+
+	marker1 = node
+	while(marker1!=marker2):
+		marker1 = marker1.next
+		marker2 = marker2.next
+
+	return marker1.item
 
 a = Node(1)
 b = Node(2)
@@ -31,7 +39,7 @@ x = Node(4)
 y = Node(5)
 z = Node(6)
 e = Node(5)
-f = Node(6)
+f = Node(6å)
 g = Node(7)
 h = Node(8)
 

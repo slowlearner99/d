@@ -3,8 +3,10 @@ class Node(object):
 		self.value = item
 		self.next = None
 
-def palindrome_reverse(head1,head2):
-	
+def palindrome_reverse(head1):
+	templist = Node(head1.value)
+	templist = duplicate_list(head1,templist)
+	head2 = reverse(head1)
 	marker1 = head1.next
 	marker2 = head2.next
 
@@ -87,9 +89,7 @@ def palindrome_stack(head1):
 
 head1 = Node(0)
 head1 = create_list(head1,5)
-templist = Node(head1.value)
-templist = duplicate_list(head1,templist)
-head2 = reverse(head1)
-print(palindrome_reverse(templist,head2))
-
+print(palindrome_reverse(head1))
+head1 = Node(0)
+head1 = create_list(head1,5)
 print(palindrome_stack(head1))
